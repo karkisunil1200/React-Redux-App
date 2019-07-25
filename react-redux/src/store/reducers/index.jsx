@@ -15,7 +15,6 @@ export const reducer = (state = initialState, {type, payload}) => {
         error: ''
       };
     case FETCH_CARD_SUCCESS:
-      console.log(state.universities);
       return {
         ...state,
         isFetching: false,

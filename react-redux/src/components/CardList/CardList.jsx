@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 
+import './CardList.css';
 import Card from '../Card/Card';
 import {fetchCard} from '../../store/actions/index';
 
@@ -10,17 +11,17 @@ function CardList(props) {
   }, []);
 
   return (
-    <div>
-      <h1>Welcome to The House of Cards</h1>
-
-      {props.cards.map(card => {
-        return <Card card={card} />;
-      })}
+    <div className='cardlist-container'>
+      <h1 className='text-center'>Welcome to The House of Cards</h1>
+      <div className='cardList'>
+        {props.cards.map(card => {
+          return <Card key={card.code} card={card} />;
+        })}
+      </div>
     </div>
   );
 }
 const mapStateToProps = state => {
-  console.log(state);
   return {
     cards: state.cards
   };
