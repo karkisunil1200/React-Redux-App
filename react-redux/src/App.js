@@ -1,12 +1,14 @@
 import React from 'react';
 
+import CardList from './components/CardList/CardList';
+
 import './App.css';
 
 function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <h1>Hello</h1>
+        <CardList />
       </header>
     </div>
   );
